@@ -1,0 +1,4 @@
+    Partindo do princípio básico que ambas diferem na forma de organizar o código.
+    A programação procedural, segue um "processo linear", criando muitas vezes um único arquivo e adicionando as classes e métodos, tudo misturado, uma classe com mais de uma "função", executando métodos que não deveria ser de sua responsabilidade.
+    A programação OO, segue um "processo livre", criando os arquivos com suas classes separadas, executando os métodos de "responsabilidade única". Já ajudando na criação de um código limpo..
+    

@@ -1,0 +1,34 @@
+Algoritmo de rotina ao acordar
+
+Início
+
+1. Despertar:
+    1- Pensar quando se tornará um programador, Abrir os olhos e se levantar da cama;
+2. Sair da cama;
+    1- Colocar os pés no chão e se levantar completamente;
+3. Ir ao banheiro;
+    1- Caminhar até o banheiro e entrar;
+    2- Verificando se as portas estão abertas
+    3- Se a porta estiver fechada;
+        3.1- Colocar a mão na maçaneta;
+        3.2- Girar a maçaneta;
+        3.3- Puxar a porta;
+4. Lavar o rosto;
+    1- Molhar as mãos com água e sabonete, e esfregar o rosto;
+5. Escovear os dentes;
+    1- Molhar a escova de dentes com água, colocar pasta de dente e escovar os dentes por dois minutos;
+6. Tomar um banho;
+    1.Ficar embaixo do chuveiro, ligar a água e tomar banho;
+7. Se vestir;
+    1- Escolher as roupas que vai usar e colocá-las;
+8. Planejar o dia;
+    1- Pensar no que vai fazer no dia, e organizar as tarefas, principalmente estudar programação;
+10. Sair de casa
+Fim
+
+Opções
+
+Se está atrasado, pode tomar um banho mais rápido ou pular o café da manhã.
+Se está com fome, pode tomar um café da manhã mais reforçado.
+Se está com pressa, pode se vestir mais rápido.
+Dentre outras.

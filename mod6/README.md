@@ -1,0 +1,3 @@
+# Exercicio do modulo 6
+1 - Pesquisar sobre oo e procedural, e explicar com minhas palavras...
+2 - Algoritmo em portugal da rotina ao acordar.
