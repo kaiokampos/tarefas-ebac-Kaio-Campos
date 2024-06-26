@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/projeto1/projeto1/projeto1.iml" filepath="$PROJECT_DIR$/projeto1/projeto1/projeto1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tarefas-ebac-Kaio-Campos.iml" filepath="$PROJECT_DIR$/.idea/tarefas-ebac-Kaio-Campos.iml" />
     </modules>
   </component>
