@@ -27,6 +27,7 @@ public class CarList <T extends Car >{
         final StringBuilder sb = new StringBuilder("CarList{");
         sb.append("carsList=").append(carsList);
         sb.append('}');
+        sb.append("\n");
         return sb.toString();
     }
 }

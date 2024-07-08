@@ -23,6 +23,7 @@ public abstract class Car {
         sb.append("brand='").append(brand).append('\'');
         sb.append(", model='").append(model).append('\'');
         sb.append('}');
+        sb.append("\n");
         return sb.toString();
     }
 }
