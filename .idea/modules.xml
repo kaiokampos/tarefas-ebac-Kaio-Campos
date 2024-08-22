@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod23e24.iml" filepath="$PROJECT_DIR$/mod23e24.iml" />
       <module fileurl="file://$PROJECT_DIR$/expressoes-lambda/modulo20/modulo20.iml" filepath="$PROJECT_DIR$/expressoes-lambda/modulo20/modulo20.iml" />
       <module fileurl="file://$PROJECT_DIR$/projeto1/projeto1/projeto1.iml" filepath="$PROJECT_DIR$/projeto1/projeto1/projeto1.iml" />
       <module fileurl="file://$PROJECT_DIR$/tarefa_streams/tarefa_streams.iml" filepath="$PROJECT_DIR$/tarefa_streams/tarefa_streams.iml" />
