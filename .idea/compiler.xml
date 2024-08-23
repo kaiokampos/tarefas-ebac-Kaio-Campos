@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mod23e24" />
         <module name="Modulo24" />
+        <module name="exemplosVendasMod25" />
       </profile>
     </annotationProcessing>
   </component>

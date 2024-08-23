@@ -1,7 +1,7 @@
 package br.com.kaiokampos.controller;
 
 import br.com.kaiokampos.model.User;
-import br.com.kaiokampos.service.UserService;
+import br.com.kaiokampos.services.UserService;
 import br.com.kaiokampos.view.UserView;
 
 import java.util.Scanner;
