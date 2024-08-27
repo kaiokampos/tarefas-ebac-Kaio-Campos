@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mod23e24" />
+        <module name="mod26" />
         <module name="Modulo24" />
         <module name="exemplosVendasMod25" />
       </profile>
