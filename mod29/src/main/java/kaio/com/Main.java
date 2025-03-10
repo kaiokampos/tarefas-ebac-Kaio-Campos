@@ -1,17 +1,21 @@
 package kaio.com;
 
-import java.sql.Connection;
+
+import kaio.com.dao.ClienteDAO;
+import kaio.com.dao.jdbc.ConnectionFactory;
+import kaio.com.domain.Cliente;
+
 import java.sql.SQLException;
 
-import static java.sql.DriverManager.getConnection;
-
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         System.out.println("CRUD em Java usando JDBC!");
-        try (Connection connection = getConnection()) {
-            System.out.println("Conexão bem-sucedida!");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        // Testando conexão
+        ConnectionFactory.getConnection();
+
+        ClienteDAO clienteDAO = new ClienteDAO();
+        Cliente cliente = new Cliente(1, "Kaio", "kaio@email.com");
+        clienteDAO.adicionar(cliente);
     }
 }

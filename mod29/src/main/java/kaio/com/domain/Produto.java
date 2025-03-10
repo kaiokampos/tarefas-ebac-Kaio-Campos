@@ -1,14 +1,14 @@
 package kaio.com.domain;
 
-public class Cliente {
+public class Produto {
     private int id;
     private String nome;
-    private String email;
+    private double preco;
 
-    public Cliente(int id, String nome, String email) {
+    public Produto(int id, String nome, double preco) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
+        this.preco = preco;
     }
 
     public int getId() {
@@ -27,11 +27,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
