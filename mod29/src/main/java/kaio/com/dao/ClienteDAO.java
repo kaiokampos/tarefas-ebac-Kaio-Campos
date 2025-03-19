@@ -1,13 +1,15 @@
 package kaio.com.dao;
 
 
-import kaio.com.dao.interfaces.ClienteDAOInterface;
-import kaio.com.dao.jdbc.ConnectionFactory;
+import kaio.com.service.interfaces.ClienteDAOInterface;
+import kaio.com.dao.jdbc.connection.ConnectionFactory;
 import kaio.com.domain.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO implements ClienteDAOInterface {
@@ -26,21 +28,92 @@ public class ClienteDAO implements ClienteDAOInterface {
 
     @Override
     public void atualizar(Cliente cliente) {
-        // Implementação futura
+        String sql = "UPDATE clientes SET nome = ?, email = ? WHERE id = ?";
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setString(1, cliente.getNome());
+            preparedStatement.setString(2, cliente.getEmail());
+            preparedStatement.setInt(3, cliente.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao atualizar o cliente", e);
+        }
     }
 
     @Override
     public void remover(int id) {
-        // Implementação futura
+        String sql = "DELETE FROM clientes WHERE id = ?";
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao remover o cliente: ", e);
+        }
     }
 
     @Override
     public Cliente buscarPorId(int id) {
-        return null; // Implementação futura
+        String sql = "SELECT * FROM clientes WHERE id = ?";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return new Cliente(resultSet.getInt("id"), resultSet.getString("nome"), resultSet.getString("email"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Cliente não encontrado: "+e);
+        }
+        return null;
     }
 
     @Override
     public List<Cliente> listarTodos() {
-        return null; // Implementação futura
+        List<Cliente> clientes = new ArrayList<>();
+        String sql = "SELECT * FROM clientes";
+
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()){
+                clientes.add(new Cliente(resultSet.getInt("id"), resultSet.getString("nome"), resultSet.getString("email")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar clientes: ", e);
+        }
+        return clientes;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

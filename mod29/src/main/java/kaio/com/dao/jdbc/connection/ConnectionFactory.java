@@ -1,4 +1,4 @@
-package kaio.com.dao.jdbc;
+package kaio.com.dao.jdbc.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,6 +20,6 @@ public class ConnectionFactory {
 
     private static Connection initConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:postgresql://localhost:15432/vendas_online_2", "postgres", "admin");
+                "jdbc:postgresql://localhost:5432/loja-virtual-ebac", "admin", "admin");
     }
 }

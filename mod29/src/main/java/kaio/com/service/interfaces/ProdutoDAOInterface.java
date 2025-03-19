@@ -1,4 +1,4 @@
-package kaio.com.dao.interfaces;
+package kaio.com.service.interfaces;
 
 import kaio.com.domain.Produto;
 
