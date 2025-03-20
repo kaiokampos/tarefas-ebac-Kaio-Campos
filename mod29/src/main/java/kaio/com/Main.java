@@ -3,6 +3,12 @@ package kaio.com;
 
 import kaio.com.dao.ClienteDAO;
 import kaio.com.dao.ProdutoDAO;
+import kaio.com.dao.jdbc.ClienteDAOImpl;
+import kaio.com.dao.jdbc.ProdutoDAOImpl;
+import kaio.com.domain.Cliente;
+import kaio.com.domain.Produto;
+import kaio.com.service.interfaces.ClienteDAOInterface;
+import kaio.com.service.interfaces.ProdutoDAOInterface;
 
 import java.sql.SQLException;
 
@@ -21,8 +27,8 @@ public class Main {
 //            System.out.println("Erro ao conectar: " + e.getMessage());
 //        }
 //
-        ClienteDAO clienteDAO = new ClienteDAO();
-        ProdutoDAO produtoDAO = new ProdutoDAO();
+        /*ClienteDAO clienteDAO = new ClienteDAO();
+        ProdutoDAO produtoDAO = new ProdutoDAO();*/
 
         /*// Criando um cliente e adicionando ao banco
         Cliente clienteKaio = new Cliente(1, "Kaio", "kaio@email.com");
@@ -74,7 +80,7 @@ public class Main {
         Produto produtoAtualizado = new Produto(1, "Notebook Gamer", 4500.00);
         produtoDAO.atualizar(produtoAtualizado);
         System.out.println("Produto atualizado com sucesso!");*/
-
+/*
         // Remover um cliente pelo ID
         int idClienteRemover = 1;
         clienteDAO.remover(idClienteRemover);
@@ -83,8 +89,29 @@ public class Main {
         // Remover um produto pelo ID
         int idProdutoRemover = 1;
         produtoDAO.remover(idProdutoRemover);
-        System.out.println("Produto removido com sucesso!");
+        System.out.println("Produto removido com sucesso!");*/
 
+        ClienteDAOInterface clienteService = new ClienteDAOImpl(new ClienteDAO()) {
+        };
+        ProdutoDAOInterface produtoService = new ProdutoDAOImpl(new ProdutoDAO());
+
+        // Criar um cliente
+        Cliente novoCliente = new Cliente(0, "Kaio Souza", "kaio@email.com");
+        clienteService.adicionar(novoCliente);
+        System.out.println("Cliente salvo com sucesso!");
+
+        // Criar um produto
+        Produto novoProduto = new Produto(0, "Mouse Gamer", 150.00);
+        produtoService.adicionar(novoProduto);
+        System.out.println("Produto salvo com sucesso!");
+
+        // Listar todos os clientes
+        System.out.println("Lista de clientes:");
+        clienteService.listarTodos().forEach(System.out::println);
+
+        // Listar todos os produtos
+        System.out.println("Lista de produtos:");
+        produtoService.listarTodos().forEach(System.out::println);
     }
 }
 
