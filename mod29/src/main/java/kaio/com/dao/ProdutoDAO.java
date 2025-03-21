@@ -11,6 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProdutoDAO implements ProdutoDAOInterface {
+    private Connection connection;
+
+    public ProdutoDAO(Connection connection){
+        this.connection = connection;
+    }
+
+    public ProdutoDAO() {
+
+    }
     @Override
     public void adicionar(Produto produto) {
         String sql = "INSERT INTO produtos (id, nome, preco) VALUES (?, ?, ?)";

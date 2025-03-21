@@ -13,8 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO implements ClienteDAOInterface {
+    private Connection connection;
+
+    public ClienteDAO(Connection connection){
+        this.connection = connection;
+    }
+
+    public ClienteDAO() {
+
+    }
+
     @Override
-    public void adicionar(Cliente cliente) {
+    public void salvar(Cliente cliente) {
         String sql = "INSERT INTO clientes (id, nome, email) VALUES (?, ?, ?)";
         try (Connection conn = ConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, cliente.getId());

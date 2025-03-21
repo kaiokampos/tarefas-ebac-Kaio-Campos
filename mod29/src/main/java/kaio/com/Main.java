@@ -91,13 +91,12 @@ public class Main {
         produtoDAO.remover(idProdutoRemover);
         System.out.println("Produto removido com sucesso!");*/
 
-        ClienteDAOInterface clienteService = new ClienteDAOImpl(new ClienteDAO()) {
-        };
+        ClienteDAOInterface clienteService = new ClienteDAOImpl(new ClienteDAO());
         ProdutoDAOInterface produtoService = new ProdutoDAOImpl(new ProdutoDAO());
 
         // Criar um cliente
         Cliente novoCliente = new Cliente(0, "Kaio Souza", "kaio@email.com");
-        clienteService.adicionar(novoCliente);
+        clienteService.salvar(novoCliente);
         System.out.println("Cliente salvo com sucesso!");
 
         // Criar um produto

@@ -9,13 +9,14 @@ import java.util.List;
 public class ClienteDAOImpl implements ClienteDAOInterface {
     private final ClienteDAO clienteDAO;
 
+
     public ClienteDAOImpl(ClienteDAO clienteDAO) {
         this.clienteDAO = clienteDAO;
     }
 
     @Override
-    public void adicionar(Cliente cliente) {
-        clienteDAO.adicionar(cliente);
+    public void salvar(Cliente cliente) {
+        clienteDAO.salvar(cliente);
     }
 
     @Override
