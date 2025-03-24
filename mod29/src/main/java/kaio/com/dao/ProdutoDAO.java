@@ -21,7 +21,7 @@ public class ProdutoDAO implements ProdutoDAOInterface {
 
     }
     @Override
-    public void adicionar(Produto produto) {
+    public void salvar(Produto produto) {
         String sql = "INSERT INTO produtos (id, nome, preco) VALUES (?, ?, ?)";
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

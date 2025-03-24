@@ -14,8 +14,8 @@ public class ProdutoDAOImpl implements ProdutoDAOInterface {
     }
 
     @Override
-    public void adicionar(Produto produto) {
-        produtoDAO.adicionar(produto);
+    public void salvar(Produto produto) {
+        produtoDAO.salvar(produto);
 
     }
 

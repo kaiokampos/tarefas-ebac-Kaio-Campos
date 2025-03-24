@@ -26,13 +26,13 @@ public class ClienteDAOTest {
 
     @Test
     public void testSalvarCliente() {
-        Cliente cliente = new Cliente(22, "Test User", "test@email.com");
+        Cliente cliente = new Cliente(100, "Test User", "teste@email.com");
         clienteDAO.salvar(cliente);
 
 
         Cliente clienteSalvo = clienteDAO.buscarPorId(cliente.getId());
 
-        assertNotNull("Cliene deveria ter sido salvo no banco ",clienteSalvo);
+        assertNotNull("Cliene deveria ter sido salvo no banco ", clienteSalvo);
         assertEquals("Teste User", "Test User", clienteSalvo.getNome());
 
         clienteDAO.remover(cliente.getId());
@@ -40,7 +40,7 @@ public class ClienteDAOTest {
 
     @Test
     public void testeAtualizarCliente() {
-        Cliente cliente = new Cliente(22,"Cliente Antigo", "antigo@gmail.com");
+        Cliente cliente = new Cliente(100,"Cliente Antigo", "antigo@gmail.com");
         clienteDAO.salvar(cliente);
 
         clienteDAO.buscarPorId(cliente.getId());
@@ -60,7 +60,7 @@ public class ClienteDAOTest {
 
     @Test
     public void testeRemoverCliente() {
-        Cliente cliente = new Cliente(22, "User to Delete", "delete@email.com");
+        Cliente cliente = new Cliente(100, "User to Delete", "delete@email.com");
         clienteDAO.salvar(cliente);
 
         clienteDAO.buscarPorId(cliente.getId());
@@ -77,14 +77,13 @@ public class ClienteDAOTest {
 
     @Test
     public void testBuscarClientePorId() {
-        Cliente cliente = new Cliente(119, "User to Find", "id@email.com");
+        Cliente cliente = new Cliente(100, "User to Find", "id@email.com");
         clienteDAO.salvar(cliente);
-
-        System.out.println("ID gerado para o cliente: " + cliente.getId()); // 🔍 Debug
 
         Cliente encontrado = clienteDAO.buscarPorId(cliente.getId());
         assertNotNull("Erro: Cliente não encontrado no banco!", encontrado);
         assertEquals("User to Find", encontrado.getNome());
+
         clienteDAO.remover(cliente.getId());
     }
 
