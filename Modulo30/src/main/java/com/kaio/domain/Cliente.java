@@ -1,23 +1,34 @@
 package com.kaio.domain;
 
-public class Cliente {
+import com.kaio.interfaces.Persistente;
+
+@Tabela("TB_CLIENTE")
+public class Cliente implements Persistente {
+
+    @ColunaTabela(dbName = "id", setJavaName = "setId")
     private Long id;
+
+    @ColunaTabela(dbName = "nome", setJavaName = "setNome")
     private String nome;
-    private String cpf;
-    private String telefone;
-    private String endereco;
-    private Long numero;
+
+    @TipoChave("getCpf")
+    @ColunaTabela(dbName = "cpf", setJavaName = "setCpf")
+    private String cpf; // Alterado para String para evitar perda de informação
+
+    @ColunaTabela(dbName = "tel", setJavaName = "setTelefone")
+    private String telefone; // Alterado para String
+
+    @ColunaTabela(dbName = "endereco", setJavaName = "setEndereco")
+    private String endereco; // Renomeado para manter consistência
+
+    @ColunaTabela(dbName = "numero", setJavaName = "setNumero")
+    private Integer numero;
+
+    @ColunaTabela(dbName = "cidade", setJavaName = "setCidade")
     private String cidade;
+
+    @ColunaTabela(dbName = "estado", setJavaName = "setEstado")
     private String estado;
-    private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -51,11 +62,11 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public Long getNumero() {
+    public Integer getNumero() {
         return numero;
     }
 
-    public void setNumero(Long numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
@@ -75,12 +86,17 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public String getEmail() {
-        return email;
+    public Long getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{id=" + id + ", nome='" + nome + "', cpf='" + cpf + "', telefone='" + telefone + "', endereco='" + endereco + "', numero=" + numero + ", cidade='" + cidade + "', estado='" + estado + "'}";
     }
 }
 

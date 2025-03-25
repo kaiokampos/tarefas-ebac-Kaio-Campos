@@ -47,4 +47,6 @@ Aqui vou descrever a sequencia logica para a criacao de um CRUD.
 
       public void setId(Long id);
       }
+para ter um fraco acoplamento vamos criar GenericDAO e IGenericDAO
+partindo do mesmo principio de dao e interface
 
