@@ -1,5 +1,8 @@
 package com.kaio.domain;
 
+import com.kaio.anotacao.ColunaTabela;
+import com.kaio.anotacao.Tabela;
+import com.kaio.anotacao.TipoChave;
 import com.kaio.interfaces.Persistente;
 
 import java.math.BigDecimal;
