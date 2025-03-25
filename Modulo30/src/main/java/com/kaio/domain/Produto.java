@@ -1,19 +1,41 @@
 package com.kaio.domain;
 
+import com.kaio.interfaces.Persistente;
+
 import java.math.BigDecimal;
 
-public class Produto {
-    private Long id;
-    private String codigo;
-    private String nome;
-    private String descricao;
-    private BigDecimal valor;  // Alterado para Double para representar valores com casas decimais
-    private String categoria;  // Novo campo categoria
+import java.math.BigDecimal;
+import java.util.Objects;
 
+@Tabela("TB_PRODUTO")
+public class Produto implements Persistente<Long> {
+
+    @ColunaTabela(dbName = "id", setJavaName = "setId")
+    private Long id;
+
+    @TipoChave("getCodigo")
+    @ColunaTabela(dbName = "codigo", setJavaName = "setCodigo")
+    private String codigo;
+
+    @ColunaTabela(dbName = "nome", setJavaName = "setNome")
+    private String nome;
+
+    @ColunaTabela(dbName = "descricao", setJavaName = "setDescricao")
+    private String descricao;
+
+    @ColunaTabela(dbName = "valor", setJavaName = "setValor")
+    private BigDecimal valor;
+
+    @ColunaTabela(dbName = "categoria", setJavaName = "setCategoria")
+    private String categoria;
+
+    // Getters e Setters
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -57,7 +79,34 @@ public class Produto {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+    // Implementação de equals e hashCode usando 'codigo' como identificador único
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(codigo, produto.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    // Implementação do toString() para facilitar o debug
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", codigo='" + codigo + '\'' +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
 }
+
 /*
 * id BIGSERIAL PRIMARY KEY,
     codigo VARCHAR(10) NOT NULL,
