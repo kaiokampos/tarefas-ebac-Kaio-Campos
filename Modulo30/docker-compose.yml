@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  postgres_prod:
+    image: postgres:latest
+    container_name: postgres_prod
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: vendas_online
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - vendas_online_network
+
+  postgres_test:
+    image: postgres:latest
+    container_name: postgres_test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: vendas_online_test
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./init_test.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - vendas_online_network
+
+networks:
+  vendas_online_network:
+    driver: bridge
