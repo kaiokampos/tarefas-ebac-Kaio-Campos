@@ -1,9 +1,11 @@
 package com.kaio.domain;
 
+import com.kaio.anotacao.ColunaTabela;
+import com.kaio.anotacao.Tabela;
 import com.kaio.interfaces.Persistente;
 
 @Tabela("TB_ESTOQUE")
-public class Estoque implements Persistente {
+public class Estoque implements Persistente<Long> {
 
     @ColunaTabela(dbName = "id", setJavaName = "setId")
     private Long id;
