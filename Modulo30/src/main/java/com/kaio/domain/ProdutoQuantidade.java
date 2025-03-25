@@ -1,5 +1,8 @@
 package com.kaio.domain;
 
+import com.kaio.anotacao.ColunaTabela;
+import com.kaio.anotacao.Tabela;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
