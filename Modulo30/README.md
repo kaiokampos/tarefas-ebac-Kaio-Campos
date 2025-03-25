@@ -50,3 +50,49 @@ Aqui vou descrever a sequencia logica para a criacao de um CRUD.
 para ter um fraco acoplamento vamos criar GenericDAO e IGenericDAO
 partindo do mesmo principio de dao e interface
 
+
+tentativa de explicar o codigo. primeiro vc inicia pela classe ou interface
+
+1 interface / classe 
+na classe vc determina os parametros, os atributos, 
+na interface vc determina os metodos, ou acoes, oque vc vai fazer com os atributos da classe
+
+2 dao
+para um fraco acoplamento vamos criar os dao generic e a interfaces generics...
+No dao como se trata de acesso ao banco atraves de consultas, gera exceptions, 
+entao quando for fazer o dao podemos iniciar pelas exceptions quando for pedido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
