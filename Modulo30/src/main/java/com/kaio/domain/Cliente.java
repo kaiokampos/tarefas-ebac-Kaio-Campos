@@ -11,6 +11,9 @@ public class Cliente implements Persistente {
     @ColunaTabela(dbName = "nome", setJavaName = "setNome")
     private String nome;
 
+    @ColunaTabela(dbName = "email", setJavaName = "setEmail")
+    private String email;
+
     @TipoChave("getCpf")
     @ColunaTabela(dbName = "cpf", setJavaName = "setCpf")
     private String cpf; // Alterado para String para evitar perda de informação
@@ -36,6 +39,14 @@ public class Cliente implements Persistente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCpf() {
