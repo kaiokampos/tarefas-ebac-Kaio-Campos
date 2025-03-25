@@ -1,18 +1,21 @@
 package com.kaio.domain;
 
-import java.util.Objects;
+import com.kaio.interfaces.Persistente;
 
-public class Estoque {
+@Tabela("TB_ESTOQUE")
+public class Estoque implements Persistente {
 
+    @ColunaTabela(dbName = "id", setJavaName = "setId")
     private Long id;
+
+    @ColunaTabela(dbName = "id_produto", setJavaName = "setProduto")
     private Produto produto;
+
+    @ColunaTabela(dbName = "quantidade", setJavaName = "setQuantidade")
     private Integer quantidade;
 
-    public Estoque() {}
-
-    public Estoque(Produto produto, Integer quantidade) {
-        this.produto = produto;
-        this.quantidade = quantidade;
+    public Estoque() {
+        this.quantidade = 0;
     }
 
     public Long getId() {
@@ -37,42 +40,6 @@ public class Estoque {
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
-    }
-
-    // Método para adicionar quantidade ao estoque
-    public void adicionarQuantidade(int quantidade) {
-        this.quantidade += quantidade;
-    }
-
-    // Método para remover quantidade do estoque (verifica se há estoque suficiente)
-    public boolean removerQuantidade(int quantidade) {
-        if (this.quantidade >= quantidade) {
-            this.quantidade -= quantidade;
-            return true;
-        }
-        return false; // Retorna falso se não houver estoque suficiente
-    }
-
-    @Override
-    public String toString() {
-        return "Estoque{" +
-                "id=" + id +
-                ", produto=" + produto +
-                ", quantidade=" + quantidade +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Estoque estoque = (Estoque) o;
-        return Objects.equals(id, estoque.id) && Objects.equals(produto, estoque.produto);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, produto);
     }
 }
 
