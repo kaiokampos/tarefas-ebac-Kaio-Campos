@@ -9,6 +9,7 @@ DELETE
 
 Eu acredito que o primeiro passo seja criarmos e testarmos a conexao com banco de dados
 
+Logo depois nos podemos criar nossa classe modelo. no nosso caso vamos criar no pacote domain
 
 
 // Estrutura do projeto Modulo30
