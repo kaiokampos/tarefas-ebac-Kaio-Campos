@@ -5,6 +5,7 @@ import com.kaio.exceptions.DAOException;
 import com.kaio.generic.dao.GenericDAO;
 import com.kaio.interfaces.dao.IClienteDAO;
 
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Collection;
