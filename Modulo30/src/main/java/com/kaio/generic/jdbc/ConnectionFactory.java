@@ -8,9 +8,6 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     private static Connection connection;
 
-    // Definir o ambiente (produção ou teste)
-    private static final String AMBIENTE = System.getenv("PRODUCAO"); // "PRODUCAO" ou "TESTE"
-
     private ConnectionFactory() {
         // Construtor privado para evitar instanciação externa
     }
